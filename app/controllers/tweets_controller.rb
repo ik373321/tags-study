@@ -6,8 +6,10 @@ def new
   @tweet = Tweet.new
 end
 def create
-  # binding.pry
+  #  binding.pry
   @tweet = Tweet.new(tweets_params)
+  tag_list = params[:tweet][:tag_name].split(",") #追加
+  @tweet.tags_save(tag_list)
   if @tweet.valid?
     @tweet.save
     redirect_to root_path
@@ -15,6 +17,9 @@ def create
 
     render :new
   end
+end
+def tag
+  @tag = Tag.all.order('created_at DESC')
 end
 
 

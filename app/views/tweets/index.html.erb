@@ -39,6 +39,12 @@
    <%= tweet.memo %>
   </div>
 </div>
+<p class="card-text">    
+            <%tweet.tags.each do |tag| %>
+              <a>＃ <%= tag.tag_name %></a>
+            <%end%>
+          </p>
+  </div>
  </li>
   <%end%>
 
