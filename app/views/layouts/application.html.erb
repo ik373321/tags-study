@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+   <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link ral="stylesheet" href="style.css">
     <title>TagsStudy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +13,8 @@
   </head>
 
   <body>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBI4wIgWynv4jemfw_FpI4tNFpQbb74tU&callback=initialize"></script>
+   <script src="map.js"> </script>
     <%= yield %>
   </body>
 </html>
