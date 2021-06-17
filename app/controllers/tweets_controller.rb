@@ -21,7 +21,11 @@ end
 def tag
   @tag = Tag.all.order('created_at DESC')
 end
-
+def stag
+  # binding.pry
+  @tag = Tag.find(params[:format])
+  @tweet = @tag.tweets.order('created_at DESC')
+end
 
 private
 def tweets_params

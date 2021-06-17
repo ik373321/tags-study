@@ -38,12 +38,12 @@
   <div class="card-header">
    <%= tweet.memo %>
   </div>
-</div>
 <p class="card-text">    
             <%tweet.tags.each do |tag| %>
-              <a>＃ <%= tag.tag_name %></a>
+              <a> <%= link_to  stag_tweets_path(tag.id) do %>＃ <%= tag.tag_name %></a><%end%>
             <%end%>
           </p>
+</div>
   </div>
  </li>
   <%end%>

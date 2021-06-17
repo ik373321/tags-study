@@ -1,0 +1,30 @@
+<div class="container">
+<h3>#
+<%=@tag.tag_name%>
+</h3>
+ <% if @tweet.length !=0 %>
+ <%= link_to 'トップページへ戻る', root_path %>
+<% @tweet.each do |tweet| %>
+ <li class='list'>
+<div class="card text-dark bg-light mb-3" style="max-width: 180rem;">
+  <div class="card-header">
+  <%= tweet.memo %>
+    </div>
+           <p class="card-text"> <tr>
+            <%tweet.tags.each do |tag| %>
+              <a> <%= link_to  stag_tweets_path(tag.id) do %>＃ <%= tag.tag_name %></a><%end%>
+            <%end%>
+         </tr></p>
+          
+
+
+</div>
+ </li>
+        <%end%>
+
+<% else %>
+  該当する投稿はありません
+<% end %>
+<br>
+<%= link_to 'トップページへ戻る', root_path %>
+</div>
